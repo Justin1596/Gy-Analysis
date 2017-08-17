@@ -2,19 +2,18 @@ clear all
 close all
 clc
 
-path = 'C:\Users\user\Desktop\Neck Injury\Gy-Analysis\ExcelData\';
+path = 'C:\Users\user\Desktop\Neck Injury\Gy-Analysis\ExcelData\'; % Path to Excel Files (Will vary from system to system)
 filenamesCellC = dir([path,'\Cell C\*.xlsx']);
 filenamesCellF = dir([path,'\Cell F\*.xlsx']);
 filenames = [filenamesCellC(1:30,1);filenamesCellF];
 
+% Enter Initial Slopes given by the curve fitting.
 slopeFy = 2.948;
 slopeFzcomp = 6.487;
 slopeFztens = 7.16;
 slopeMz = 8.351;
-% testing git
 
 og = [2.948 6.487 7.16 8.351];
-% diff = SlopesToMANIC(slopeFy,slopeFzcomp,slopeFztens,slopeMz)
 slopes = [og(1),og(2),og(3),og(4)];
 
 loading = VectorizedCode;
